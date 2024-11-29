@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="name">Nombre:</label><br>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="surname">Apellidos:</label><br>
+        <input type="text" id="surname" name="surname" required>
+        <br><br>
+        <label for="address">Dirección:</label><br>
+        <input type="text" id="vt" name="vt" placeholder="Tipo de vía" required>
+        <input type="text" id="vn" name="vn" placeholder="Nombre de la vía" required>
+        <input type="text" id="cp" name="cp" placeholder="Código Postal" required>
+        <input type="text" id="city" name="city" placeholder="Ciudad" required>
+        <input type="text" id="province" name="province" placeholder="Provincia" required>
+        <input type="text" id="country" name="country" placeholder="País" required>
+        <br><br>
+        <label for="birth">Fecha de nacimiento:</label><br>
+        <input type="date" id="birth" name="birth" required>
+        <br><br>
+        <label for="grade">Nota media en la universidad:</label><br>
+        <input type="number" id="grade" name="grade" min="0" max="10" step="0.1" required>
+        <br><br>
+        <label for="phone">Número de teléfono:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" placeholder="123456789" required>
+        <br><br>
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <label for="repeatPassword">Repetir contraseña:</label><br>
+        <input type="password" id="repeatPassword" name="repeatPassword" required>
+        <br><br>
+        <label for="country">País:</label>
+        <select name="country" id="country" required>
+            <option value="void"></option>
+            <option value="spain">España</option>
+            <option value="france">Francia</option>
+            <option value="portugal">Portugal</option>
+            <option value="andorra">Andorra</option>
+        </select>
+        <br><br>
+        <label for="accountType">Tipo de cuenta:</label>
+        <select name="accountType" id="accountType" required>
+            <option value="void"></option>
+            <option value="gratuita">Gratuita</option>
+            <option value="basica">Básica</option>
+            <option value="premium">Premium</option>
+        </select>
+        <br><br>
+        <label for="aboutMe">Sobre mí:</label><br>
+        <textarea name="aboutMe" id="aboutMe" cols="30" rows="10" required></textarea>
+        <br><br>
+        <label for="profilePicture">Foto de perfil:</label>
+        <input type="file" id="profilePicture" name="profilePicture">
+        <br><br>
+        <label for="cv">Permitir subir CV:</label>
+        <input type="checkbox" id="cv" name="cv">
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>
