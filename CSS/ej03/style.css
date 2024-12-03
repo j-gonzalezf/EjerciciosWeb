@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-gap: 10px;
+}
+
+.grid-item {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border: 3px solid;
+}
+
+#red {
+    background-color: red;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+.rec {
+    border-radius: 10px;
+}
+
+.cir {
+    border-radius: 50%;
+}
+
+.grid-container> :nth-child(1),
+.grid-container> :nth-child(6),
+.grid-container> :nth-child(11) {
+    border-color: blue;
+    border-style: solid;
+}
+
+.grid-container> :nth-child(2),
+.grid-container> :nth-child(7),
+.grid-container> :nth-child(12) {
+    border-color: red;
+    border-style: dotted;
+}
+
+.grid-container> :nth-child(3),
+.grid-container> :nth-child(8),
+.grid-container> :nth-child(13) {
+    border-color: orange;
+    border-style: dashed;
+}
+
+.grid-container> :nth-child(4),
+.grid-container> :nth-child(9),
+.grid-container> :nth-child(14) {
+    border-color: yellow;
+    border-style: double;
+}
+
+.grid-container> :nth-child(5),
+.grid-container> :nth-child(10),
+.grid-container> :nth-child(15) {
+    border-color: green;
+    border-style: groove;
+}
