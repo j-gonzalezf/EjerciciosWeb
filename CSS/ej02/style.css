@@ -11,22 +11,15 @@ div {
     cursor: pointer;
 }
 
-#container1, #container2, #container3 {
-    height: auto;
-    width: 250px;
-    display: flex;
-    justify-content: space-between;
-}
-
-#container1 {
+#primeraFila {
     background-color: white;
 }
 
-#container2 {
+#segundaFila {
     background-color: gray;
 }
 
-#container3 {
+#terceraFila {
     background-color: black;
 }
 
