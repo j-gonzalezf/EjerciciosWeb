@@ -1,0 +1,53 @@
+div {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#container1, #container2, #container3 {
+    height: auto;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#container1 {
+    background-color: white;
+}
+
+#container2 {
+    background-color: gray;
+}
+
+#container3 {
+    background-color: black;
+}
+
+#red {
+    background-color: red;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+.rec {
+    border-radius: 10px;
+}
+
+.cir {
+    border-radius: 50%;
+}
