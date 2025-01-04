@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-E4</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="getup" style="font-size: 24px; font-weight: bold">Hora actual</div>
+    <div class="now" style="font-size: 24px; font-weight: bold"></div>
+    <div class="break" style="font-size: 24px; font-weight: bold">----------------</div>
+    <div class="sleep" style="font-size: 24px; font-weight: bold">Hora actual x2</div>
+    <div class="now" style="font-size: 24px; font-weight: bold"></div>
+    <div class="now" style="font-size: 24px; font-weight: bold"></div>
+
+    <script>
+      function showTime() {
+        var elements = document.querySelectorAll(".now");
+        var now = new Date();
+        var hours = now.getHours().toString().padStart(2, "0");
+        var minutes = now.getMinutes().toString().padStart(2, "0");
+        var seconds = now.getSeconds().toString().padStart(2, "0");
+        var time = hours + ":" + minutes + ":" + seconds;
+
+        elements.forEach(function (element) {
+          element.innerHTML = time;
+        });
+      }
+
+      setInterval(showTime, 1000);
+
+      // Muestra la hora inmediatamente al cargar la página
+      showTime();
+    </script>
+  </body>
+</html>
