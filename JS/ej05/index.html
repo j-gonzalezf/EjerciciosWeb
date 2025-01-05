@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-E5</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Aplicación de Alarma</h2>
+    <input type="number" id="seconds" placeholder="Segundos" min="0" step="1" />
+    <button id="start" onclick="startAlarm()">Iniciar</button>
+    <button id="postpone" onclick="postponeAlarm()" disabled>Posponer</button>
+    <button id="stop" onclick="stopAlarm()" disabled>Parar</button>
+    <br />
+    <br />
+    <div id="message"></div>
+    <audio id="alarm" src="alarma.mp3" loop></audio>
+
+    <script>
+      var isPlaying = false;
+      var interval;
+      function startAlarm() {
+        var sec = document.getElementById("seconds").value;
+        var countdown = document.getElementById("message");
+
+        document.getElementById("start").disabled = true;
+        document.getElementById("stop").disabled = false;
+
+        // Para mostrar el mensaje instantaneamente al pulsar el botón "Iniciar"
+        countdown.innerHTML = "La alarma sonará en: " + sec + " segundos.";
+
+        interval = setInterval(function () {
+          if (sec > 1) {
+            sec--;
+            countdown.innerHTML = "La alarma sonará en: " + sec + " segundos.";
+          } else {
+            clearInterval(interval);
+            countdown.innerHTML = "¡La alarma está sonando!";
+            isPlaying = true;
+            document.getElementById("postpone").disabled = false;
+            document.getElementById("alarm").play();
+          }
+        }, 1000);
+      }
+
+      function postponeAlarm() {
+        if (isPlaying) {
+          stopAlarm();
+          document.getElementById("seconds").value = 10;
+          startAlarm();
+        }
+      }
+
+      function stopAlarm() {
+        clearInterval(interval);
+        var alarm = document.getElementById("alarm");
+        alarm.pause();
+        alarm.currentTime = 0;
+        isPlaying = false;
+        document.getElementById("start").disabled = false;
+        document.getElementById("postpone").disabled = true;
+        document.getElementById("stop").disabled = true;
+        document.getElementById("seconds").value = "";
+        document.getElementById("message").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>
